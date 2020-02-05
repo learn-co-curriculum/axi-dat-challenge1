@@ -42,4 +42,4 @@ Using the requests library and the swapi [documentation](https://swapi.co/docume
 Your main deliverable is a jupyternotebook containing the following clearly labeled:
 1. A pandas dataframe with only the starships with the top 5 highest `credits_per_length` in descending order with only the name and `credits_per_length` column. If you completed the BONUS section also include the `pilot_name` column.
 2. A bar graph visualizing each of the top 5 starships with their corresponding `credits_per_length`
-3. A short paragraph detailing your rational for what is the best starship to purchase based on your analysis
+3. A short paragraph detailing your rationale for what is the best starship to purchase based on your analysis
