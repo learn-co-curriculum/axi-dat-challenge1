@@ -8,7 +8,7 @@ This assessment is designed to test your understanding of these areas:
 4. Interpreting and communicating results of an analysis
 5. (BONUS) Querying an API
 
-Create a new jupyter notebook to complete the challenge and show your work. Make sure that your code is clean, readable and each step of your process is documented. For this challenge each step builds upon the step before it. If you are having issues finishing one of the steps completely, move on to the next step to attempt every section.
+Create a new Jupyter notebook to complete the challenge and show your work. Make sure that your code is clean, readable and each step of your process is documented. For this challenge each step builds upon the step before it. If you are having issues finishing one of the steps completely, move on to the next step to attempt every section.
 
 ### Importing Data
 
@@ -16,7 +16,8 @@ Contained in this repo is a SQLite database named ***starwars_starships.db***. T
 
 ### Data Cleaning and Filtering
 
-* Once you have your data your tasks are to:
+Once you have your data your tasks are to:
+
 * Select only rows that do not have 'unknown' in the length column
 * Change the datatype of the `cost_in_credits` and `length` columns to floats
 * Create a new column `cost_per_length` which is calculated by `cost_in_credits` / `length`
@@ -34,12 +35,12 @@ For the last portion of the challenge imagine that you are looking to purchase a
 
 ### (Bonus) API: Finding the Pilots
 
-NOTE: Please do not atempt this section until you have fully completed the main sections
+NOTE: Please do not attempt this section until you have fully completed the main sections.  `git add` and `git commit` your code from the previous sections before continuing.
 
-Using the requests library and the swapi [documentation](https://swapi.co/documentation), use the urls found in the pilots column to find the name of the pilot for the 5 starships in your final dataframe and add them to your final dataframe in a column called `pilot_name`. If there is no pilot available for a particular starship simply add the value of ‘no pilot’ instead.
+Using the `requests` library and the Star Wars API [documentation](https://swapi.co/documentation), use the urls found in the `pilots` column to find the name of the pilot for the 5 starships in your final dataframe and add them to your final dataframe in a column called `pilot_name`. If there is no pilot available for a particular starship simply add the value of 'no pilot' instead.
 
 # Deliverables
-Your main deliverable is a jupyternotebook containing the following clearly labeled:
+Your main deliverable is a Jupyter notebook containing the following clearly labeled:
 1. A pandas dataframe with only the starships with the top 5 highest `credits_per_length` in descending order with only the name and `credits_per_length` column. If you completed the BONUS section also include the `pilot_name` column.
 2. A bar graph visualizing each of the top 5 starships with their corresponding `credits_per_length`
 3. A short paragraph detailing your rationale for what is the best starship to purchase based on your analysis
