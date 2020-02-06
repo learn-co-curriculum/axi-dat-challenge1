@@ -41,6 +41,6 @@ Using the `requests` library and the Star Wars API [documentation](https://swapi
 
 # Deliverables
 Your main deliverable is a Jupyter notebook containing the following clearly labeled:
-1. A pandas dataframe with only the starships with the 5 lowest `credits_per_length` in descending order with only the name and `credits_per_length` column. If you completed the BONUS section also include the `pilot_name` column.
+1. A pandas dataframe with only the starships with the 5 lowest `credits_per_length` in ascending order with only the name and `credits_per_length` column. If you completed the BONUS section also include the `pilot_name` column.
 2. A bar graph visualizing each of the 5 starships with their corresponding `credits_per_length`
 3. A short paragraph detailing your rationale for what is the best starship to purchase based on your analysis
