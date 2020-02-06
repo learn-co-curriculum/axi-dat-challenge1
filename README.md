@@ -21,7 +21,7 @@ Once you have your data your tasks are to:
 * Select only rows that do not have 'unknown' in the length column
 * Change the datatype of the `cost_in_credits` and `length` columns to floats
 * Create a new column `cost_per_length` which is calculated by `cost_in_credits` / `length`
-* Create a dataframe which includes only the ***5 starships*** with the ***highest*** `cost_per_length` in ***descending*** order
+* Create a dataframe which includes only the ***5 starships*** with the ***lowest*** `cost_per_length` in ***ascending*** order
 
 ### Visualization
 
@@ -41,6 +41,6 @@ Using the `requests` library and the Star Wars API [documentation](https://swapi
 
 # Deliverables
 Your main deliverable is a Jupyter notebook containing the following clearly labeled:
-1. A pandas dataframe with only the starships with the top 5 highest `credits_per_length` in descending order with only the name and `credits_per_length` column. If you completed the BONUS section also include the `pilot_name` column.
-2. A bar graph visualizing each of the top 5 starships with their corresponding `credits_per_length`
+1. A pandas dataframe with only the starships with the 5 lowest `credits_per_length` in descending order with only the name and `credits_per_length` column. If you completed the BONUS section also include the `pilot_name` column.
+2. A bar graph visualizing each of the 5 starships with their corresponding `credits_per_length`
 3. A short paragraph detailing your rationale for what is the best starship to purchase based on your analysis
