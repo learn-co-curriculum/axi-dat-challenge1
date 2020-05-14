@@ -1,4 +1,4 @@
-# Mod 1 Code Challenge: Star Wars Starships
+# Mod 1 Code Challenge: Pokémon Items
 
 This assessment is designed to test your understanding of these areas:
 
@@ -6,41 +6,67 @@ This assessment is designed to test your understanding of these areas:
 2. Data manipulation in SQL and/or Pandas
 3. Creating visualizations using Matplotlib
 4. Interpreting and communicating results of an analysis
-5. (BONUS) Querying an API
+5. Querying an API
 
-Create a new Jupyter notebook to complete the challenge and show your work. Make sure that your code is clean, readable and each step of your process is documented. For this challenge each step builds upon the step before it. If you are having issues finishing one of the steps completely, move on to the next step to attempt every section.
+Create a new Jupyter notebook to complete the challenge and show your work. Make sure that your code is clean and readable, and that each step of your process is documented. For this challenge each step builds upon the step before it. If you are having issues finishing one of the steps completely, move on to the next step to attempt every section.
 
-### Importing Data
+## Business Understanding
 
-Contained in this repo is a SQLite database named ***starwars_starships.db***. The name of the table is `starwars_starships`. Using SQL and/or Pandas import the data contained in this database to begin data cleaning and analysis.
+![snorlax](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png)
 
-### Data Cleaning and Filtering
+Today you're going to use data science tools to optimize your Pokémon game play strategy. You have a **Snorlax** that has learned the **Fling** move, so you are looking to buy an **Item** based on its `fling_power` as well as its cost.
+
+(For the purpose of this exercise, you can ignore all other Pokémon game mechanics, such as which Poké Mart sells which items or the details of the effects of the particular item.)
+
+## Data Understanding
+
+![database schema](images/schema.png)
+
+Contained in this repo is a SQLite database named ***pokemon.db***. The name of the table to use is `items`. Using SQL and/or Pandas import the data contained in this database to begin data cleaning and analysis.
+
+## Data Preparation
 
 Once you have your data your tasks are to:
 
-* Select only rows that do not have 'unknown' in the length column
-* Change the datatype of the `cost_in_credits` and `length` columns to floats
-* Create a new column `cost_per_length` which is calculated by `cost_in_credits` / `length`
-* Create a dataframe which includes only the ***5 starships*** with the ***lowest*** `cost_per_length` in ***ascending*** order
+* Select only rows that do not have NaN in the `fling_power` column
+* Ensure that the datatype of the `fling_power` and `cost` columns is numeric
+* Create a new column `power_per_cost` which is calculated by `fling_power` / `cost`
+* Create a dataframe which includes only the ***7 items*** with the ***highest*** `power_per_cost` in ***descending*** order
+
+## Exploratory Data Analysis
+
+### Tabular Data
+
+After cleaning and preprocessing your data, display the dataframe of the seven selected items within your notebook.  (This can be as simple as creating a variable, and then typing the name of that variable at the end of a cell.)
 
 ### Visualization
 
-After cleaning your data and filtering for the appropriate people, create a bar graph which will visualize the `credits_per_length` of the five starships. Use the `name` of the starship as the label for each bar. This visualization should contain:
+Next, create a bar graph to visualize the `cost` of the seven items. Use the `name` of the item as the label for each bar. This visualization should contain:
+
 * An informative title
 * Labeled axes
 * An appropriate scale
 
-### Communicating Results
-For the last portion of the challenge imagine that you are looking to purchase a starship and want to get the longest ship for the best price. Write a short paragraph describing the information you have distilled and note any interesting trends or anomalies in the data that would help you decide what starship is right for you. 
+## Decision Support
 
-### (Bonus) API: Finding the Pilots
+Based on your EDA, choose which item you want to buy.  Write a short paragraph describing the information you have distilled, and why you chose the item that you chose.  (You do not need any background knowledge on Pokémon to answer this question.)
 
-NOTE: Please do not attempt this section until you have fully completed the main sections.  `git add` and `git commit` your code from the previous sections before continuing.
+## Additional Data Collection with the PokéAPI
 
-Using the `requests` library and the Star Wars API [documentation](https://swapi.co/documentation), use the urls found in the `pilots` column to find the name of the pilot for the 5 starships in your final dataframe and add them to your final dataframe in a column called `pilot_name`. If there is no pilot available for a particular starship simply add the value of 'no pilot' instead.
+Use the PokéAPI ([documentation here](https://pokeapi.co/docs/v2.html#items-section)) to find the effect(s) of your chosen item.
 
-# Deliverables
-Your main deliverable is a Jupyter notebook containing the following clearly labeled:
-1. A pandas dataframe with only the starships with the 5 lowest `credits_per_length` in ascending order with only the name and `credits_per_length` column. If you completed the BONUS section also include the `pilot_name` column.
-2. A bar graph visualizing each of the 5 starships with their corresponding `credits_per_length`
-3. A short paragraph detailing your rationale for what is the best starship to purchase based on your analysis
+1. Create the request URL with `"https://pokeapi.co/api/v2/item/"` plus the `api_id` of the chosen item.  E.g. `"https://pokeapi.co/api/v2/item/1"` if the `api_id` was 1
+2. Use the `requests` library to send a request with this URL and receive the response
+3. Convert the content of the response into a Python dictionary with the `.json()` method
+4. Using the key `effect_entries`, retrieve information about the effect(s) of your chosen item from this dictionary.  Display this information to the reader in whatever format seems best.
+
+# Deliverables Checklist
+
+(Using markdown, mark items as complete in this checklist by changing `[ ]` to `[x]`)
+
+Your main deliverable is a Jupyter notebook containing the following clearly labeled elements:
+
+ - [ ] A pandas dataframe with only the items with the 7 highest `power_per_cost` in descending order
+ - [ ] A bar graph visualizing each of the 7 items with their corresponding `cost`
+ - [ ] A short paragraph detailing your rationale for what is the best item to purchase based on your analysis
+ - [ ] Additional explanation of your chosen item, using data from the PokéAPI
