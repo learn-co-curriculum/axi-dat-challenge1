@@ -53,12 +53,13 @@ Based on your EDA, choose which item you want to buy.  Write a short paragraph d
 
 ## Additional Data Collection with the PokéAPI
 
-Use the PokéAPI ([documentation here](https://pokeapi.co/docs/v2.html#items-section)) to find the effect(s) of your chosen item.
+Use the PokéAPI ([documentation here](https://pokeapi.co/docs/v2.html#items-section)) to find the **Fling Effect** of your chosen item.
 
 1. Create the request URL with `"https://pokeapi.co/api/v2/item/"` plus the `api_id` of the chosen item.  E.g. `"https://pokeapi.co/api/v2/item/1"` if the `api_id` was 1
 2. Use the `requests` library to send a request with this URL and receive the response
 3. Convert the content of the response into a Python dictionary with the `.json()` method
-4. Using the key `effect_entries`, retrieve information about the effect(s) of your chosen item from this dictionary.  Display this information to the reader in whatever format seems best.
+4. Using the key `fling_effect`, retrieve information from this dictionary about the effect of using Fling with your chosen item
+5. Display this information to the reader in whatever format seems best.  You may want to consider making additional API calls
 
 # Deliverables Checklist
 
