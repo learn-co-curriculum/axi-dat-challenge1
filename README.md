@@ -59,7 +59,8 @@ Use the PokéAPI ([documentation here](https://pokeapi.co/docs/v2.html#items-sec
 2. Use the `requests` library to send a request with this URL and receive the response
 3. Convert the content of the response into a Python dictionary with the `.json()` method
 4. Using the key `fling_effect`, retrieve information from this dictionary about the effect of using Fling with your chosen item
-5. Display this information to the reader in whatever format seems best.  You may want to consider making additional API calls
+5. Display this information to the reader in whatever format seems best
+6. You may want to consider making additional API calls but this is a BONUS and is not required
 
 # Deliverables Checklist
 
