@@ -31,17 +31,17 @@ Once you have your data your tasks are to:
 * Select only rows that do not have NaN in the `fling_power` column
 * Ensure that the datatype of the `fling_power` and `cost` columns is numeric
 * Create a new column `power_per_cost` which is calculated by `fling_power` / `cost`
-* Create a dataframe which includes only the ***7 items*** with the ***highest*** `power_per_cost` in ***descending*** order
+* Create a dataframe `top_7_items` which includes only the ***7 items*** with the ***highest*** `power_per_cost` in ***descending*** order
 
 ## Exploratory Data Analysis
 
 ### Tabular Data
 
-After cleaning and preprocessing your data, display the dataframe of the seven selected items within your notebook.  (This can be as simple as creating a variable, and then typing the name of that variable at the end of a cell.)
+After cleaning and preprocessing your data, display the dataframe of the seven selected items within your notebook.  (This can be as simple as creating a variable `top_7_items`, and then typing the name of that variable at the end of a cell.)
 
 ### Visualization
 
-Next, create a bar graph to visualize the `cost` of the seven items. Use the `name` of the item as the label for each bar. This visualization should contain:
+Next, create a bar graph to visualize the `cost` of the seven items.  (Not `power_per_cost`, `cost`.) Use the `name` of the item as the label for each bar. This visualization should contain:
 
 * An informative title
 * Labeled axes
