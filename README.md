@@ -14,7 +14,7 @@ Create a new Jupyter notebook to complete the challenge and show your work. Make
 
 ![snorlax](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png)
 
-Today you're going to use data science tools to optimize your Pokémon game play strategy. You have a **Snorlax** that has learned the **Fling** move, so you are looking to buy an **Item** based on its `fling_power` as well as its cost.
+Today you're going to use data science tools to optimize your Pokémon game play strategy. You have a **Snorlax** that has learned the move **Fling**, so you are looking to buy an **Item** based on its `fling_power` as well as its cost.
 
 (For the purpose of this exercise, you can ignore all other Pokémon game mechanics, such as which Poké Mart sells which items or the details of the effects of the particular item.)
 
